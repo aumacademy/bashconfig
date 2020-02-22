@@ -1,0 +1,31 @@
+#!/bin/bash -e
+
+# set -e
+echo ''
+echo "---------- Starting linux system update and upgrade ----------"
+
+TEXT_RESET='\e[0m'
+TEXT_YELLOW='\e[0;33m'
+TEXT_RED_B='\e[1;31m'
+
+sudo apt-get -y update
+echo -e $TEXT_YELLOW
+echo 'apt-get update finished...'
+echo -e $TEXT_RESET
+
+sudo apt-get -y upgrade
+echo -e $TEXT_YELLOW
+echo 'apt-get upgrade finished...'
+echo -e $TEXT_RESET
+
+
+# sudo apt-get update -y
+# sudo apt-get upgrade -yy
+sudo apt-get -y autoremove
+sudo apt-get -y autoclean
+sudo apt-get -y clean
+echo "------------------------------------------------------------"
+echo " ---------------- Update Upgrade Complete! ----------------"
+echo "------------------------------------------------------------"
+echo ''
+
